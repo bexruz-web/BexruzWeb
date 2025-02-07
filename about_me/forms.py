@@ -1,10 +1,13 @@
 from django import forms
-from .models import User
+
+from about_me.models import ContactMessages
 
 
-class UserFrom(forms.ModelForm):
-    model = User
-    fields = "__all__"
-    widgets = {
-        "name": forms.TextInput(attrs={'class': 'form-control'})
-    }
+class ContactMessagesForm(forms.ModelForm):
+    class Meta:
+        model = ContactMessages
+        fields = "__all__"
+
+
+
+
