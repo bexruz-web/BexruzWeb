@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from settings_app.models import TelegramBotSettings
+
+
+class TelegramBotSettingsAdmin(admin.ModelAdmin):
+    list_display = ['username', 'token']
+admin.site.register(TelegramBotSettings, TelegramBotSettingsAdmin)
