@@ -1,0 +1,112 @@
+<!--Contact Section Start-->
+<section id="contact" class="contact-section pt-page">
+    <div class="section-container">
+
+        <!--Page Heading-->
+        <div class="page-heading">
+            <span class="icon"><i class="lnr lnr-envelope"></i></span>
+            <h2>Contact Me</h2>
+        </div>
+
+        <!--Form Row-->
+        <div class="row mb-70">
+            <div class="col-lg-8  offset-lg-2">
+                <div class="subheading">
+                    <h3>Let's Talk</h3>
+                </div>
+
+                <!--Form Start-->
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <!--Name Field-->
+                        <div class="col-md-6 mb-50">
+                            <span class="input">
+                                <input required class="input__field cf-validate" type="text" id="cf-name"
+                                       name="name"/>
+                                <label class="input__label" for="cf-name">Name</label>
+                            </span>
+                        </div>
+
+                        <!--Email Field-->
+                        <div class="col-md-6 mb-50">
+                            <span class="input">
+                                <input required class="input__field cf-validate" type="text" id="cf-phone"
+                                       name="phone_number"/>
+                                <label class="input__label" for="cf-phone">Phone number</label>
+                            </span>
+                        </div>
+
+                        <!--Message Box-->
+                        <div class="col-md-12 mb-30">
+                            <span class="input">
+                                <textarea required class="input__field cf-validate" id="cf-message"
+                                          name="text" rows="5"></textarea>
+                                <label class="input__label"
+                                       for="cf-message">How can we help you?</label>
+                            </span>
+                        </div>
+
+                        {% if messages %}
+                            {% for i in messages %}
+                                {% if i.tags == 'success' %}
+                                    <div class="col-md-12">
+                                        <div class="alert-container col-md-12">
+                                            <div class="alert alert-success">
+                                                Xabaringiz yuborildi. Tez orada siz bilan bog'lanamiz!
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% else %}
+                                    <div class="col-md-12">
+                                        <div class="alert-container col-md-12">
+                                            <div class="alert alert-danger">
+                                                Xatolik. Tekshirib qaytadan urinib ko'ring!
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+
+                        <!--Submit Button-->
+                        <div class="col-md-12 text-center">
+                            <button id="cf-submit" class="btn-main">Send Message</button>
+                        </div>
+
+
+                    </div>
+                </form>
+                <!--Form End-->
+
+            </div>
+        </div>
+
+        <!--Contact Info Row Start-->
+        <div class="row contact-info mb-70">
+
+            <!--Contact Info Item-->
+            <div class="col-md-4 info-item">
+                <span class="icon"><i class="fas fa-paper-plane"></i></span>
+                <h5><a href="https://t.me/Web_BekxruzMe">@Bexruz Asqarov</a></h5>
+            </div>
+
+            <!--Contact Info Item-->
+            <div class="col-md-4 info-item">
+                <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                <h5>{{ about.address }}</h5>
+            </div>
+
+            <!--Contact Info Item-->
+            <div class="col-md-4 info-item">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <h5>{{ about.phone }}</h5>
+            </div>
+
+        </div>
+        <!--Contact Info Row End-->
+
+    </div>
+
+</section>
+<!--Contact Section End-->

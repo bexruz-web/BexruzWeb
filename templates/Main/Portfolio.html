@@ -1,0 +1,44 @@
+{% load static %}
+
+<!--Porfolio Section Start-->
+<section id="portfolio" class="portfolio-section pt-page">
+    <div class="section-container">
+
+        <!--Page Heading-->
+        <div class="page-heading">
+            <span class="icon"><i class="lnr lnr-briefcase"></i></span>
+            <h2>Portfolio</h2>
+        </div>
+
+        <div class="row">
+            <!--Portfolio Filter-->
+            <div class="col-md-12 portfolio-filter text-center">
+                <ul>
+                    <li class="active" data-filter="*">All</li>
+                    {% for i in portfolio_category %}
+                        <li data-filter=".{{ i.filter }}">{{ i.title }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <!--Portfolio Items-->
+        <div class="row portfolio-items mb-50">
+            {% for i in portfolios %}
+                <!--Portfolio Item-->
+                <div class="item col-lg-4 col-sm-6 {% for category in i.category.all %}{{ category.filter }} {% endfor %}">
+                    <a target="_blank" href="{{ i.link }}">
+                        <figure>
+                            <img src="{{ i.image.url }}" >
+                            <figcaption>
+                                <h4>{{ i.title }}</h4>
+                                <p>{% for category in i.category.all %}{{ i.title }}{% if not forloop.last %}, {% endif %} {% endfor %}</p>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!--Porfolio Section End-->
