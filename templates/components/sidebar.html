@@ -7,14 +7,14 @@
               <!--Mobile Header-->
               <div class="header-mobile">
                   <a class="header-toggle"><i class="fas fa-bars"></i></a>
-                  <h2 style="text-transform: none;">{{ ui_settings.header_name }}</h2>
+                  <h2 style="text-transform: none;">Bexruz Web</h2>
               </div>
 
               <!--Main Header-->
               <div class="header-main" data-simplebar>
                   <div class="image-container">
-                      <h2 class="header-name" style="text-transform: none;">{{ ui_settings.header_name }}</h2>
-                      <img src="{{ ui_settings.header_image.url }}" alt="{{ ui_settings.header_name }}">
+                      <h2 class="header-name" style="text-transform: none;">Bexruz Web</h2>
+                      <img src="media/bexruz_images/bexruz_icon.jpg" alt="Bexruz Web">
                   </div>
 
                   <!--Nav Menus-->
@@ -24,7 +24,6 @@
                           <li><a href="#about" class="pt-link"><span class="nav-menu-icon"><i class="lnr lnr-user"></i></span>About Me</a></li>
                           <li><a href="#resume" class="pt-link"><span class="nav-menu-icon"><i class="lnr lnr-license"></i></span>Resume</a></li>
                           <li><a href="#portfolio" class="pt-link"><span class="nav-menu-icon"><i class="lnr lnr-briefcase"></i></span>Portfolio</a></li>
-                          <li><a href="#blog" class="pt-link"><span class="nav-menu-icon"><i class="lnr lnr-book"></i></span>Blog</a></li>
                           <li><a href="#contact" class="pt-link"><span class="nav-menu-icon"><i class="lnr lnr-envelope"></i></span>Contact</a></li>
                       </ul>
                   </nav>
@@ -33,18 +32,25 @@
                   <div class="nav-footer">
                       <!--Social Links-->
                       <ul class="social">
-                          {% for i in social_networks %}
                             <li>
-                                <a href="{{ i.href }}" target="_blank">
-                                    <i class="{{ i.i_class }}"></i>
+                                <a href="https://www.instagram.com/bekxruz_me" target="_blank">
+                                    <i class="fab fa-instagram"></i>
                                 </a>
                             </li>
-                          {% endfor %}
+                            <li>
+                                <a href="https://t.me/Web_BekxruzMe" target="_blank">
+                                    <i class="fab fa-telegram"></i>
+                                </a>
+                            </li>
 
                       </ul>
                       <!--Copyright Text-->
                       <div class="copy">
-                          <p>{{ ui_settings.footer_text|safe }}</p>
+                          <p>
+                              <span id="year"></span> © <b>BexruzWeb</b>
+                              <br>
+                              Barcha huquqlar himoyalangan.
+                          </p>
                       </div>
                   </div>
 
@@ -52,3 +58,8 @@
           </div>
       </header>
 <!--Header End-->
+
+<!-- JavaScript - Yil avtomatik o‘zgarishi uchun -->
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>

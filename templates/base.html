@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en" data-random-animation="false" data-animation="19">
+<head>
+        <!--Meta Tags-->
+        <meta charset="utf-8">
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="keywords" content="vcard, resume, personal, portfolio, cv, card, responsive" />
+        <meta name="description" content="vCard / Resume / Personal Template" />
+        <meta name="author" content="cosmos-themes" />
+
+        <!--Page Title-->
+        <title>
+            {% block title %}{% endblock title %}
+        </title>
+
+        <!--Plugins Css-->
+        <link rel="stylesheet" href="{% static 'css/plugins.css' %}">
+        <!--Main Styles Css-->
+        <link rel="stylesheet" href="{% static 'css/style-light.css' %}">
+
+        <link rel="stylesheet" href="{% static 'css/style-demo.css' %}">
+
+        <!--Color Css-->
+        <link class="site-color" rel="stylesheet" href="{% static 'css/blue-color.css' %}">
+
+        <!--Modernizr Js-->
+        <script src="{% static 'js/modernizr.js' %}"></script>
+
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122650090-3"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-122650090-3');
+        </script>
+
+
+    </head>
+
+    <body>
+
+        <!--Preloader Start-->
+        <div class="preloader">
+            <div class="loader">
+                <!--Your Name-->
+                <h4 style="text-transform: none;">Bexruz Asqarov</h4>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <!--Preloader End-->
+
+        {% block content %}{% endblock content %}
+
+        <!--Jquery JS-->
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <!--Plugins JS-->
+        <script src="{% static 'js/plugins.min.js' %}"></script>
+
+        <!--Site Main JS-->
+        <script src="{% static 'js/main.js' %}"></script>
+
+        <script src="{% static 'js/main-demo.js' %}"></script>
+
+        <script>
+            //Particles
+            particlesJS.load('particles-js', '{% static "js/particles1.json" %}', function() {
+                console.log('callback - particles.js config loaded');
+            });
+        </script>
+
+    </body>
+</html>
+

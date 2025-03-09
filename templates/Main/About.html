@@ -1,0 +1,72 @@
+{% load static %}
+
+<!--About Section Start-->
+<section id="about" class="about-section pt-page">
+    <div class="section-container">
+        <!--Page Heading-->
+        <div class="page-heading">
+            <span class="icon"><i class="lnr lnr-user"></i></span>
+            <h2>About Me</h2>
+        </div>
+
+        <!-- About Info Row Start-->
+        <div class="row about mb-70">
+
+            <div class="col-lg-8">
+                <!--Personal Intro-->
+                <h3 class="mb-20">{{ about.title }}</h3>
+                {{ about.body|safe }}
+
+            </div>
+
+            <!--Personal Info-->
+            <div class="col-lg-4">
+                <div class="about-info">
+                    <h3 class="mb-20">Personal Information</h3>
+                    <ul>
+                        <li><span class="title">Name</span><span class="value">{{ about.name }}</span></li>
+                        <li><span class="title">Age</span><span class="value">{{ about.age }}</span></li>
+                        <li><span class="title">Address</span><span class="value">{{ about.address }}</span></li>
+                        <li><span class="title">Email</span><span class="value">{{ about.email }}</span></li>
+                        <li><span class="title">Phone</span><span class="value">{{ about.phone }}</span></li>
+                    </ul>
+                    <div class="resume-button mt-30">
+                        <a class="btn-main" href="{{ about.resume_link.url }}">Download Resume</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About Info Row End-->
+
+        <!--Services Row Start-->
+        <div class="row services mb-30">
+            <div class="col-md-12">
+                <div class="subheading">
+                    <h3>Services</h3>
+                </div>
+            </div>
+
+                <!--Service Item-->
+            <div style=" display: flex; justify-content: space-evenly; gap: 30px; padding-left: 80px;">
+                <div class="col-lg-3 col-sm-6 ">
+                    <div class="service-item">
+                        <div class="icon"><i class="lnr lnr-laptop-phone"></i></div>
+                        <h4>Web Development</h4>
+                        <p>Professional website design service for your business.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <div class="service-item" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                        <div class="icon"><i class="fab fa-telegram"></i></div>
+                        <h4 style="white-space: nowrap;">Telegram Bot Development </h4>
+                        <p>Professional telegram bot development service for your business.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--Services Row End-->
+    </div>
+</section>
+<!--About Section Start-->

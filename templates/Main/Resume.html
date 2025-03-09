@@ -1,0 +1,119 @@
+<!--Resume Section Start-->
+<section id="resume" class="resume-section pt-page">
+    <div class="section-container">
+        <div class="page-heading">
+            <span class="icon"><i class="lnr lnr-license"></i></span>
+            <h2>My Resume.</h2>
+        </div>
+
+        <!--Education & Experience Row Start-->
+        <div class="row mb-20">
+
+            <!--Experience Column Start-->
+            <div class="col-lg-6">
+                <div class="subheading">
+                    <h3>Work</h3>
+                </div>
+                <ul class="experience">
+
+                    {% for i in works %}
+                        <!--Experience Item-->
+                        <li>
+                            <span class="line-left"></span>
+                            <div class="content">
+                                <h4>{{ i.role }}</h4>
+                                <h5>{{ i.location }}</h5>
+                                <p class="info">{{ i.body }}</p>
+                            </div>
+                            <span class="year">
+                                                <span class="to">{{ i.end }}</span>
+                                                <span class="from">{{ i.start }}</span>
+                                            </span>
+                        </li>
+                    {% endfor %}
+
+                </ul>
+            </div>
+            <!--Experience Column End-->
+
+            <!--Education Column Start-->
+            <div class="col-lg-6">
+                <div class="subheading">
+                    <h3>Education</h3>
+                </div>
+
+                <ul class="education">
+
+                    {% for i in educations %}
+                        <!--Education Item-->
+                        <li>
+                        <span class="line-left"></span>
+                        <div class="content">
+                            <h4>{{ i.role }}</h4>
+                            <h5>{{ i.location }}</h5>
+                            <p class="info">{{ i.body }}</p>
+                        </div>
+                        <span class="year">
+                                            <span class="to">{{ i.start }}</span>
+                                            <span class="from">{{ i.end }}</span>
+                                        </span>
+                        </li>
+                    {% endfor %}
+
+                </ul>
+            </div>
+            <!--Education Column End-->
+
+        </div>
+        <!--Education & Experience Row End-->
+
+
+        <!--Skills Row Start-->
+        <div class="row">
+
+            <!-- Backend Skills Column Start-->
+            <div class="col-lg-6 skills">
+                <div class="subheading">
+                    <h3>Backend Skills</h3>
+                </div>
+
+                {% for i in backend_skills %}
+                    <!-- Skill Item-->
+                    <div class="skill-item">
+                    <h4 class="progress-title">{{ i.title }}</h4>
+                    <div class="progress">
+                        <div class="progress-bar" data-progress-value="{{ i.foiz }}">
+                            <div class="progress-value">{{ i.foiz }}%</div>
+                        </div>
+                    </div>
+                        </div>
+                {% endfor %}
+            </div>
+<!--          Backend Skills Column End  -->
+
+            <!--Frontend Skills Column Start-->
+            <div class="col-lg-6 skills">
+                <div class="subheading">
+                    <h3>Frontend Skills</h3>
+                </div>
+
+                {% for i in frontend_skills %}
+                    <!-- Skill Item-->
+                    <div class="skill-item">
+                    <h4 class="progress-title">{{ i.title }}</h4>
+                    <div class="progress">
+                        <div class="progress-bar" data-progress-value="{{ i.foiz }}">
+                            <div class="progress-value">{{ i.foiz }}%</div>
+                        </div>
+                    </div>
+                        </div>
+                {% endfor %}
+
+            </div>
+            <!--Frontend Skills Column End-->
+
+        </div>
+        <!--Skills Row End-->
+    </div>
+</section>
+<!--Resume Section End-->
