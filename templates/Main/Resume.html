@@ -1,3 +1,5 @@
+{% load static %}
+
 <!--Resume Section Start-->
 <section id="resume" class="resume-section pt-page">
     <div class="section-container">
@@ -16,18 +18,18 @@
                 </div>
                 <ul class="experience">
 
-                    {% for i in works %}
+                    {% for work in works %}
                         <!--Experience Item-->
                         <li>
                             <span class="line-left"></span>
                             <div class="content">
-                                <h4>{{ i.role }}</h4>
-                                <h5>{{ i.location }}</h5>
-                                <p class="info">{{ i.body }}</p>
+                                <h4>{{ work.role }}</h4>
+                                <h5>{{ work.location }}</h5>
+                                <p class="info">{{ work.body }}</p>
                             </div>
                             <span class="year">
-                                                <span class="to">{{ i.end }}</span>
-                                                <span class="from">{{ i.start }}</span>
+                                                <span class="to">{{ work.end }}</span>
+                                                <span class="from">{{ work.start }}</span>
                                             </span>
                         </li>
                     {% endfor %}
